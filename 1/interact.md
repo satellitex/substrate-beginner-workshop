@@ -16,3 +16,4 @@ Use the Acocunts tab and Add Account to create your own personal account. It wil
 
 ## Import an Account
 You may import the pre-funded Alice account and borrow some of her tokens. Download the [Alice Key File](http://167.172.206.230/alice.json). Then add her account using "Restore JSON".
+// TODO alice key file url changing

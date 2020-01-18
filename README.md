@@ -1,6 +1,7 @@
-# substrate-beginner-workshop
+# substrate-beginner-workshop(Forked for UT)
 
-A collaborative workshop to learn how to use Substrate
+A collaborative workshop to learn how to use Substrate.
+Forked by (https://www.shawntabrizi.com/substrate-beginner-workshop/).
 
 ## Overview 
 

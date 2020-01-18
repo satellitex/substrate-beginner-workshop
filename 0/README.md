@@ -4,8 +4,7 @@ Please complete the instructions on this page before attending the [Parity Subst
 
 If you have any problems with the instructions on this page, feel free to send us an email at:
 
-* shawn@parity.io
-* joshy@parity.io
+* takumi@stake.co.jp
 
 ## Instructions
 
@@ -40,6 +39,7 @@ If you have any problems with the instructions on this page, feel free to send u
 
 	If everything completed successfully, you should see your local development node producing blocks:
 
+// TODO
 	```bash
 	$ ./target/release/node-template --dev
 
