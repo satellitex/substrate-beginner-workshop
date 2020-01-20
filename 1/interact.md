@@ -15,4 +15,4 @@ In the Apps UI, go to the Settings tab, and change the endpoint to `ws://localho
 Use the Acocunts tab and Add Account to create your own personal account. It will not have any tokens (yet).
 
 ## Import an Account
-You may import the pre-funded Alice account and borrow some of her tokens. Download the [Alice Key File](./assets/alice.json). Then add her account using "Restore JSON".
+You may import the pre-funded Alice account and borrow some of her tokens. Download the [Alice Key File](https://satellitex.github.io/substrate-beginner-workshop/1/assets/alice.json). Then add her account using "Restore JSON".
