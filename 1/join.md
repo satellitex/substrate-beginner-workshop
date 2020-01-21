@@ -14,16 +14,11 @@ You can use the `substrate-node-template` you compiled earlier and this chain sp
 
 > You can use the flag `--log sub-libp2p,sync` for verbose network logs for debugging if you need it.
 
-It will use these bootstrap nodes:
-
-Fix it!
-```json
-"bootNodes": [
-    "/dns4/retreat.bootnodes.net/tcp/30333/p2p/QmNdzun5tXSo7TPEntmujvU3eLEjTJKfXpJAvwp1ikpa6T",
-    "/ip4/167.71.86.67/tcp/30333/p2p/QmdP4qG1ZSgzmsdFpBwuPAVWG9zjPRHV3dSkTT8v4TGP4J"
-],
-
-```
+If you can not sync nodes. Please tray it.
+	```
+	docker pull satellitex/substrate-workshop-node
+	docker run -p 9933:9933 -p 9944:9944 -p 30333:30333 -v $(pwd)/spec:/tmp satellitex/substrate-workshop-node --chain /tmp/specRaw.json --name sate
+	```
 
 Notice that your node now appears on the telemetry page.
 
