@@ -31,7 +31,7 @@ substrate-node-template
 Replace the content in this file with this starting point:
 
 ```rust
-use support::{decl_module, decl_storage, decl_event};
+use frame_support::{decl_module, decl_storage, decl_event};
 
 pub trait Trait: system::Trait {
 	type Event: From<Event<Self>> + Into<<Self as system::Trait>::Event>;
