@@ -18,7 +18,7 @@ If you can not sync nodes. Please tray it.
 
 ```bash
 docker pull satellitex/substrate-workshop-node
-docker run -p 9933:9933 -p 9944:9944 -p 30333:30333 -v $(pwd)/spec.json:/tmp/spec.json satellitex/substrate-workshop-node --chain /tmp/specRaw.json --name YourNodeName
+docker run -p 9933:9933 -p 9944:9944 -p 30333:30333 -v $(pwd)/spec.json:/tmp/spec.json satellitex/substrate-workshop-node --chain /tmp/spec.json --name YourNodeName
 ```
 
 Notice that your node now appears on the telemetry page.
