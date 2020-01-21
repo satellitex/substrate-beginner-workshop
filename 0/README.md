@@ -39,31 +39,30 @@ If you have any problems with the instructions on this page, feel free to send u
 
 	If everything completed successfully, you should see your local development node producing blocks:
 
-// TODO
 	```bash
-	$ ./target/release/node-template --dev
-
-	2019-10-25 16:26:43 Running in --dev mode, RPC CORS has been disabled.
-	2019-10-25 16:26:43 Substrate Node
-	2019-10-25 16:26:43   version 2.0.0-43ee953-x86_64-macos
-	2019-10-25 16:26:43   by Anonymous, 2017, 2018
-	2019-10-25 16:26:43 Chain specification: Development
-	2019-10-25 16:26:43 Node name: annoying-salt-3933
-	2019-10-25 16:26:43 Roles: AUTHORITY
-	2019-10-25 16:26:43 Initializing Genesis block/state (state: 0x499e…d805, header-hash: 0x91dd…a241)
-	2019-10-25 16:26:43 Loading GRANDPA authority set from genesis on what appears to be first startup.
-	2019-10-25 16:26:43 Loaded block-time = 6000 seconds from genesis on first-launch
-	2019-10-25 16:26:43 Highest known block at #0
-	2019-10-25 16:26:43 Using default protocol ID "sup" because none is configured in the chain specs
-	2019-10-25 16:26:43 Local node identity is: QmPr6qzL4p3ytqqbLu9yq1jX2FtDvoGxgDq6v3kimbNWrb
-	2019-10-25 16:26:48 Starting consensus session on top of parent 0x91dd55574a13be24d0c6dff1f8a4575d679a9592e919207f9472adca277ba241
-	2019-10-25 16:26:48 Prepared block for proposing at 1 [hash: 0x889f6b60dde48f83139c7d44458c53acd1ef8ecd7309d640b3e04bc61aa62cfe; parent_hash: 0x91dd…a241; extrinsics: [0x16d2…9757]]
-	2019-10-25 16:26:48 Pre-sealed block for proposal at 1. Hash now 0x4eb8dd65c16195f7c60de09634f2d9f29fc4f2fc8515ba2160a2a91e5458054c, previously 0x889f6b60dde48f83139c7d44458c53acd1ef8ecd7309d640b3e04bc61aa62cfe.
-	2019-10-25 16:26:48 Imported #1 (0x4eb8…054c)
-	2019-10-25 16:26:48 Idle (0 peers), best: #1 (0x4eb8…054c), finalized #0 (0x91dd…a241), ⬇ 0 ⬆ 0
-	2019-10-25 16:26:53 Idle (0 peers), best: #1 (0x4eb8…054c), finalized #0 (0x91dd…a241), ⬇ 0 ⬆ 0
-	2019-10-25 16:26:54 Starting consensus session on top of parent 0x4eb8dd65c16195f7c60de09634f2d9f29fc4f2fc8515ba2160a2a91e5458054c
-	2019-10-25 16:26:54 Prepared block for proposing at 2 [hash: 0x30e59a758b4e757c662e2d2deefd1f4d163e7bb732833aba2cbca4c1933c4363; parent_hash: 0x4eb8…054c; extrinsics: [0xb864…d340]]
-	2019-10-25 16:26:54 Pre-sealed block for proposal at 2. Hash now 0x72a3f25e5ea7b468f94b993f45be6d58c998f89b823c2f012da560e76da39b0a, previously 0x30e59a758b4e757c662e2d2deefd1f4d163e7bb732833aba2cbca4c1933c4363.
-	2019-10-25 16:26:54 Imported #2 (0x72a3…9b0a)
-	```
+➜  substrate-node-template git:(master) ./target/release/node-template --dev
+2020-01-21 07:21:20 Running in --dev mode, RPC CORS has been disabled.
+2020-01-21 07:21:20 Substrate Node
+2020-01-21 07:21:20   version 2.0.0-8b6fe66-x86_64-macos
+2020-01-21 07:21:20   by Anonymous, 2017, 2018
+2020-01-21 07:21:20 Chain specification: Development
+2020-01-21 07:21:20 Node name: glib-room-3207
+2020-01-21 07:21:20 Roles: AUTHORITY
+2020-01-21 07:21:20 Initializing Genesis block/state (state: 0xf1f5…8b31, header-hash: 0x4890…bdbc)
+2020-01-21 07:21:20 Loading GRANDPA authority set from genesis on what appears to be first startup.
+2020-01-21 07:21:20 Loaded block-time = 6000 milliseconds from genesis on first-launch
+2020-01-21 07:21:20 Highest known block at #0
+2020-01-21 07:21:20 Using default protocol ID "sup" because none is configured in the chain specs
+2020-01-21 07:21:20 Local node identity is: QmZhSeY5NWNUrfKKAL4dEsDi496KhmNmistC1Pb8DaA9Ty
+2020-01-21 07:21:20 Grafana data source server started at 127.0.0.1:9955
+2020-01-21 07:21:24 Starting consensus session on top of parent 0x4890f08bb4cd885f075af635a7355eb05df7b50b82f3c4823756a4b1f567bdbc
+2020-01-21 07:21:24 Prepared block for proposing at 1 [hash: 0x3db142b5d5bee6e01162dadb63b9be0508ce7509e1aca52badce6ea31d8ceaec; parent_hash: 0x4890…bdbc; extrinsics: [0x0c42…3e3e]]
+2020-01-21 07:21:24 Pre-sealed block for proposal at 1. Hash now 0x7a285ecf071df2c8777c93fd813518c755b528409d23943c923568839b3ee57d, previously 0x3db142b5d5bee6e01162dadb63b9be0508ce7509e1aca52badce6ea31d8ceaec.
+2020-01-21 07:21:24 Imported #1 (0x7a28…e57d)
+2020-01-21 07:21:25 Idle (0 peers), best: #1 (0x7a28…e57d), finalized #0 (0x4890…bdbc), ⬇ 0 ⬆ 0
+2020-01-21 07:21:30 Starting consensus session on top of parent 0x7a285ecf071df2c8777c93fd813518c755b528409d23943c923568839b3ee57d
+2020-01-21 07:21:30 Prepared block for proposing at 2 [hash: 0x4a5ae67dc9aa53df7115738030ae8806e9885e27ba5a5693ea864276209bfdbc; parent_hash: 0x7a28…e57d; extrinsics: [0xce71…00fd]]
+2020-01-21 07:21:30 Pre-sealed block for proposal at 2. Hash now 0x3590fc9a228cf9ac83366a3926ebd8df93e5bc771f3ea770e7f688ba13c617cb, previously 0x4a5ae67dc9aa53df7115738030ae8806e9885e27ba5a5693ea864276209bfdbc.
+2020-01-21 07:21:30 Imported #2 (0x3590…17cb)
+2020-01-21 07:21:30 Idle (0 peers), best: #2 (0x3590…17cb), finalized #0 (0x4890…bdbc), ⬇ 0 ⬆ 0
+```

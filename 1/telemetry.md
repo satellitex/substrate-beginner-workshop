@@ -2,13 +2,13 @@
 
 You can take a look at the overall network using the telemetry website:
 
-[https://telemetry.polkadot.io/#list/Retreat](https://telemetry.polkadot.io/#list/Retreat)
+[https://telemetry.polkadot.io/#list/UTC%20Testnet](https://telemetry.polkadot.io/#list/UTC%20Testnet)
 
 Your node will connect to the telemetry server because of the `spec.json`:
 
 ```json
 "telemetryEndpoints": [
-    ["ws://telemetry.polkadot.io:1024", 0]
+    [ "wss://telemetry.polkadot.io/submit/", 0 ]
 ],
 ```
 

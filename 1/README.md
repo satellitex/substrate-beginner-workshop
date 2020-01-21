@@ -15,8 +15,7 @@ You will need:
 
 Get that configuration file here:
 
-// TODO changing spec.json
-https://retreat.bootnodes.net/spec.json
+https://satellitex.github.io/substrate-beginner-workshop/1/assets/specRaw.json
 
 Take a look at the JSON!
 
