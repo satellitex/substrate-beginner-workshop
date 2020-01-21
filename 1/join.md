@@ -16,6 +16,7 @@ You can use the `substrate-node-template` you compiled earlier and this chain sp
 
 It will use these bootstrap nodes:
 
+Fix it!
 ```json
 "bootNodes": [
     "/dns4/retreat.bootnodes.net/tcp/30333/p2p/QmNdzun5tXSo7TPEntmujvU3eLEjTJKfXpJAvwp1ikpa6T",
