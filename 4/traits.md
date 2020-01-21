@@ -47,10 +47,10 @@ Click the other tabs to view hints.
 #### ** Final Code **
 
 ```rust
-use support::{decl_module, decl_storage, decl_event, ensure};
+use frame_support::{decl_module, decl_storage, decl_event, ensure};
 use sp_str::vec::Vec;
 use system::ensure_signed;
-use support::traits::ReservableCurrency;
+use frame_support::traits::ReservableCurrency;
 
 /// The module's configuration trait.
 pub trait Trait: system::Trait {
