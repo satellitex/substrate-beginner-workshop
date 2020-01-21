@@ -7,6 +7,11 @@ Today's slide: https://drive.google.com/file/d/1FuVS8ne3jktulLSm42PBhoCbKSDRDxSz
 
 Ref(SubstrateDocuments): https://substrate.dev/
 
+Telegram(JP): https://t.me/substratejapan
+
+Riot(Official): https://riot.im/app/#/room/#substrate-technical:matrix.org
+
+
 ## Overview 
 
 1. Getting started with Substrate
