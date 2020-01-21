@@ -8,10 +8,10 @@ To start thinking about our blockchain runtime, we can first write some events i
 * `ClaimRevoked`
 	* Data: `AccountId`, `Vec<u8>`
 
-To use `Vec` you need to import `sp_str::prelude::Vec`:
+To use `Vec` you need to import `sp_std::prelude::Vec`:
 
 ```rust
-use sp_str::prelude::Vec;
+use sp_std::prelude::Vec;
 ```
 
 <!-- slide:break-40 -->
@@ -41,7 +41,7 @@ fn deposit_event() = default;
 
 ```rust
 use frame_support::{decl_module, decl_storage, decl_event};
-use sp_str::prelude::Vec;
+use sp_std::prelude::Vec;
 
 pub trait Trait: system::Trait {
 	type Event: From<Event<Self>> + Into<<Self as system::Trait>::Event>;

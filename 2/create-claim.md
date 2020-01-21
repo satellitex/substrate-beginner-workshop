@@ -73,7 +73,7 @@ Self::deposit_event(RawEvent::ClaimCreated(sender, proof));
 
 ```rust
 use frame_support::{decl_storage, decl_module, decl_event, ensure};
-use sp_str::prelude::Vec;
+use sp_std::prelude::Vec;
 use system::ensure_signed;
 
 pub trait Trait: system::Trait {

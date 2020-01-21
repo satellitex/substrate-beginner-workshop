@@ -48,7 +48,7 @@ Click the other tabs to view hints.
 
 ```rust
 use frame_support::{decl_module, decl_storage, decl_event, ensure};
-use sp_str::vec::Vec;
+use sp_std::vec::Vec;
 use system::ensure_signed;
 use frame_support::traits::ReservableCurrency;
 
