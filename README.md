@@ -3,6 +3,8 @@
 A collaborative workshop to learn how to use Substrate.
 Forked by (https://www.shawntabrizi.com/substrate-beginner-workshop/).
 
+Today's slide: https://drive.google.com/file/d/1FuVS8ne3jktulLSm42PBhoCbKSDRDxSz/view?usp=sharing
+
 ## Overview 
 
 1. Getting started with Substrate
