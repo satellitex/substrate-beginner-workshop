@@ -6,10 +6,10 @@
 
 
 ```rust
-use support::{decl_module, decl_storage, decl_event, ensure};
-use rstd::vec::Vec;
+use frame_support::{decl_module, decl_storage, decl_event, ensure};
+use sp_str::vec::Vec;
 use system::ensure_signed;
-use support::traits::{Currency, ReservableCurrency, Get};
+use frame_support::traits::{Currency, ReservableCurrency, Get};
 
 /// The module's configuration trait.
 pub trait Trait: system::Trait {

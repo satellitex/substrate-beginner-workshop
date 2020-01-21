@@ -28,8 +28,8 @@ Proofs: map Vec<u8> => (T::AccountId, T::BlockNumber);
 #### ** Solution **
 
 ```rust
-use support::{decl_storage, decl_module, decl_event};
-use rstd::prelude::Vec;
+use frame_support::{decl_storage, decl_module, decl_event};
+use sp_str::prelude::Vec;
 
 pub trait Trait: system::Trait {
 	type Event: From<Event<Self>> + Into<<Self as system::Trait>::Event>;

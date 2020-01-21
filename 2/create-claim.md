@@ -41,7 +41,7 @@ fn create_claim(origin, proof: Vec<u8>) {
 
 > **Note:** You need to import:
 > * `system::ensure_signed`
-> * `support::ensure`
+> * `frame_support::ensure`
 
 ```rust
 // Verify that the incoming transaction is signed and store who the
@@ -72,8 +72,8 @@ Self::deposit_event(RawEvent::ClaimCreated(sender, proof));
 #### ** Solution **
 
 ```rust
-use support::{decl_storage, decl_module, decl_event, ensure};
-use rstd::prelude::Vec;
+use frame_support::{decl_storage, decl_module, decl_event, ensure};
+use sp_str::prelude::Vec;
 use system::ensure_signed;
 
 pub trait Trait: system::Trait {

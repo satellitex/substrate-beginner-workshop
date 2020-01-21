@@ -66,8 +66,8 @@ Self::deposit_event(RawEvent::ClaimRevoked(sender, proof));
 #### ** Solution **
 
 ```rust
-use support::{decl_storage, decl_module, decl_event, ensure};
-use rstd::prelude::Vec;
+use frame_support::{decl_storage, decl_module, decl_event, ensure};
+use sp_str::prelude::Vec;
 use system::ensure_signed;
 
 pub trait Trait: system::Trait {

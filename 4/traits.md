@@ -48,7 +48,7 @@ Click the other tabs to view hints.
 
 ```rust
 use support::{decl_module, decl_storage, decl_event, ensure};
-use rstd::vec::Vec;
+use sp_str::vec::Vec;
 use system::ensure_signed;
 use support::traits::ReservableCurrency;
 

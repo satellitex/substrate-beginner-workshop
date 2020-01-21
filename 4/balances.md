@@ -46,7 +46,7 @@ pub trait Trait: system::Trait + balances::Trait {
 #### ** Add Reservable Currency Trait **
 
 ```rust
-use support::traits::ReservableCurrency;
+use frame_support::traits::ReservableCurrency;
 ```
 
 #### ** Call Reserve **
@@ -88,10 +88,10 @@ fn revoke_claim(origin, proof: Vec<u8>) {
 #### ** Final Code **
 
 ```rust
-use support::{decl_module, decl_storage, decl_event, ensure};
-use rstd::vec::Vec;
+use frame_support::{decl_module, decl_storage, decl_event, ensure};
+use sp_str::vec::Vec;
 use system::ensure_signed;
-use support::traits::{ReservableCurrency};
+use frame_support::traits::{ReservableCurrency};
 
 /// The module's configuration trait.
 pub trait Trait: system::Trait + balances::Trait {
