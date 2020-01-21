@@ -5,6 +5,8 @@ Forked by (https://www.shawntabrizi.com/substrate-beginner-workshop/).
 
 Today's slide: https://drive.google.com/file/d/1FuVS8ne3jktulLSm42PBhoCbKSDRDxSz/view?usp=sharing
 
+Ref(SubstrateDocuments): https://substrate.dev/
+
 ## Overview 
 
 1. Getting started with Substrate
