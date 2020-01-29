@@ -1249,7 +1249,7 @@ DERNode.prototype._decodeTime = function decodeTime(buffer, tag) {
     return buffer.error('Decoding ' + tag + ' time is not supported yet');
   }
 
-  return Date.UTC(year, mon - 1, day, hour, min, sec, 0);
+  return Date.Beginner(year, mon - 1, day, hour, min, sec, 0);
 };
 
 DERNode.prototype._decodeNull = function decodeNull(buffer) {
@@ -1562,21 +1562,21 @@ DERNode.prototype._encodeTime = function encodeTime(time, tag) {
   if (tag === 'gentime') {
     str = [
       two(date.getFullYear()),
-      two(date.getUTCMonth() + 1),
-      two(date.getUTCDate()),
-      two(date.getUTCHours()),
-      two(date.getUTCMinutes()),
-      two(date.getUTCSeconds()),
+      two(date.getBeginnerMonth() + 1),
+      two(date.getBeginnerDate()),
+      two(date.getBeginnerHours()),
+      two(date.getBeginnerMinutes()),
+      two(date.getBeginnerSeconds()),
       'Z'
     ].join('');
   } else if (tag === 'utctime') {
     str = [
       two(date.getFullYear() % 100),
-      two(date.getUTCMonth() + 1),
-      two(date.getUTCDate()),
-      two(date.getUTCHours()),
-      two(date.getUTCMinutes()),
-      two(date.getUTCSeconds()),
+      two(date.getBeginnerMonth() + 1),
+      two(date.getBeginnerDate()),
+      two(date.getBeginnerHours()),
+      two(date.getBeginnerMinutes()),
+      two(date.getBeginnerSeconds()),
       'Z'
     ].join('');
   } else {
@@ -22668,7 +22668,7 @@ function formatValue(ctx, value, recurseTimes) {
 
   // Make dates with properties first say the date
   if (isDate(value)) {
-    base = ' ' + Date.prototype.toUTCString.call(value);
+    base = ' ' + Date.prototype.toBeginnerString.call(value);
   }
 
   // Make error with message first say the error
@@ -54249,8 +54249,8 @@ arguments[4][105][0].apply(exports,arguments)
         return a;
     }
 
-    function createUTC (input, format, locale, strict) {
-        return createLocalOrUTC(input, format, locale, strict, true).utc();
+    function createBeginner (input, format, locale, strict) {
+        return createLocalOrBeginner(input, format, locale, strict, true).utc();
     }
 
     function defaultParsingFlags() {
@@ -54333,7 +54333,7 @@ arguments[4][105][0].apply(exports,arguments)
     }
 
     function createInvalid (flags) {
-        var m = createUTC(NaN);
+        var m = createBeginner(NaN);
         if (flags != null) {
             extend(getParsingFlags(m), flags);
         }
@@ -54369,8 +54369,8 @@ arguments[4][105][0].apply(exports,arguments)
         if (!isUndefined(from._tzm)) {
             to._tzm = from._tzm;
         }
-        if (!isUndefined(from._isUTC)) {
-            to._isUTC = from._isUTC;
+        if (!isUndefined(from._isBeginner)) {
+            to._isBeginner = from._isBeginner;
         }
         if (!isUndefined(from._offset)) {
             to._offset = from._offset;
@@ -54969,16 +54969,16 @@ arguments[4][105][0].apply(exports,arguments)
 
     function get (mom, unit) {
         return mom.isValid() ?
-            mom._d['get' + (mom._isUTC ? 'UTC' : '') + unit]() : NaN;
+            mom._d['get' + (mom._isBeginner ? 'Beginner' : '') + unit]() : NaN;
     }
 
     function set$1 (mom, unit, value) {
         if (mom.isValid() && !isNaN(value)) {
             if (unit === 'FullYear' && isLeapYear(mom.year()) && mom.month() === 1 && mom.date() === 29) {
-                mom._d['set' + (mom._isUTC ? 'UTC' : '') + unit](value, mom.month(), daysInMonth(value, mom.month()));
+                mom._d['set' + (mom._isBeginner ? 'Beginner' : '') + unit](value, mom.month(), daysInMonth(value, mom.month()));
             }
             else {
-                mom._d['set' + (mom._isUTC ? 'UTC' : '') + unit](value);
+                mom._d['set' + (mom._isBeginner ? 'Beginner' : '') + unit](value);
             }
         }
     }
@@ -55118,7 +55118,7 @@ arguments[4][105][0].apply(exports,arguments)
             this._longMonthsParse = [];
             this._shortMonthsParse = [];
             for (i = 0; i < 12; ++i) {
-                mom = createUTC([2000, i]);
+                mom = createBeginner([2000, i]);
                 this._shortMonthsParse[i] = this.monthsShort(mom, '').toLocaleLowerCase();
                 this._longMonthsParse[i] = this.months(mom, '').toLocaleLowerCase();
             }
@@ -55169,7 +55169,7 @@ arguments[4][105][0].apply(exports,arguments)
         // see sorting in computeMonthsParse
         for (i = 0; i < 12; i++) {
             // make the regex if we don't have it already
-            mom = createUTC([2000, i]);
+            mom = createBeginner([2000, i]);
             if (strict && !this._longMonthsParse[i]) {
                 this._longMonthsParse[i] = new RegExp('^' + this.months(mom, '').replace('.', '') + '$', 'i');
                 this._shortMonthsParse[i] = new RegExp('^' + this.monthsShort(mom, '').replace('.', '') + '$', 'i');
@@ -55212,7 +55212,7 @@ arguments[4][105][0].apply(exports,arguments)
         }
 
         dayOfMonth = Math.min(mom.date(), daysInMonth(mom.year(), value));
-        mom._d['set' + (mom._isUTC ? 'UTC' : '') + 'Month'](value, dayOfMonth);
+        mom._d['set' + (mom._isBeginner ? 'Beginner' : '') + 'Month'](value, dayOfMonth);
         return mom;
     }
 
@@ -55279,7 +55279,7 @@ arguments[4][105][0].apply(exports,arguments)
             i, mom;
         for (i = 0; i < 12; i++) {
             // make the regex if we don't have it already
-            mom = createUTC([2000, i]);
+            mom = createBeginner([2000, i]);
             shortPieces.push(this.monthsShort(mom, ''));
             longPieces.push(this.months(mom, ''));
             mixedPieces.push(this.months(mom, ''));
@@ -55322,19 +55322,19 @@ arguments[4][105][0].apply(exports,arguments)
         return date;
     }
 
-    function createUTCDate (y) {
+    function createBeginnerDate (y) {
         var date;
-        // the Date.UTC function remaps years 0-99 to 1900-1999
+        // the Date.Beginner function remaps years 0-99 to 1900-1999
         if (y < 100 && y >= 0) {
             var args = Array.prototype.slice.call(arguments);
             // preserve leap years using a full 400 year cycle, then reset
             args[0] = y + 400;
-            date = new Date(Date.UTC.apply(null, args));
-            if (isFinite(date.getUTCFullYear())) {
-                date.setUTCFullYear(y);
+            date = new Date(Date.Beginner.apply(null, args));
+            if (isFinite(date.getBeginnerFullYear())) {
+                date.setBeginnerFullYear(y);
             }
         } else {
-            date = new Date(Date.UTC.apply(null, arguments));
+            date = new Date(Date.Beginner.apply(null, arguments));
         }
 
         return date;
@@ -55345,7 +55345,7 @@ arguments[4][105][0].apply(exports,arguments)
         var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
             fwd = 7 + dow - doy,
             // first-week day local weekday -- which local weekday is fwd
-            fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
+            fwdlw = (7 + createBeginnerDate(year, 0, fwd).getBeginnerDay() - dow) % 7;
 
         return -fwdlw + fwd - 1;
     }
@@ -55579,7 +55579,7 @@ arguments[4][105][0].apply(exports,arguments)
             this._minWeekdaysParse = [];
 
             for (i = 0; i < 7; ++i) {
-                mom = createUTC([2000, 1]).day(i);
+                mom = createBeginner([2000, 1]).day(i);
                 this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
                 this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
                 this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
@@ -55652,7 +55652,7 @@ arguments[4][105][0].apply(exports,arguments)
         for (i = 0; i < 7; i++) {
             // make the regex if we don't have it already
 
-            mom = createUTC([2000, 1]).day(i);
+            mom = createBeginner([2000, 1]).day(i);
             if (strict && !this._fullWeekdaysParse[i]) {
                 this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\\.?') + '$', 'i');
                 this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\\.?') + '$', 'i');
@@ -55681,7 +55681,7 @@ arguments[4][105][0].apply(exports,arguments)
         if (!this.isValid()) {
             return input != null ? this : NaN;
         }
-        var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+        var day = this._isBeginner ? this._d.getBeginnerDay() : this._d.getDay();
         if (input != null) {
             input = parseWeekday(input, this.localeData());
             return this.add(input - day, 'd');
@@ -55785,7 +55785,7 @@ arguments[4][105][0].apply(exports,arguments)
             i, mom, minp, shortp, longp;
         for (i = 0; i < 7; i++) {
             // make the regex if we don't have it already
-            mom = createUTC([2000, 1]).day(i);
+            mom = createBeginner([2000, 1]).day(i);
             minp = this.weekdaysMin(mom, '');
             shortp = this.weekdaysShort(mom, '');
             longp = this.weekdays(mom, '');
@@ -56202,8 +56202,8 @@ arguments[4][105][0].apply(exports,arguments)
     function currentDateArray(config) {
         // hooks is actually the exported moment object
         var nowValue = new Date(hooks.now());
-        if (config._useUTC) {
-            return [nowValue.getUTCFullYear(), nowValue.getUTCMonth(), nowValue.getUTCDate()];
+        if (config._useBeginner) {
+            return [nowValue.getBeginnerFullYear(), nowValue.getBeginnerMonth(), nowValue.getBeginnerDate()];
         }
         return [nowValue.getFullYear(), nowValue.getMonth(), nowValue.getDate()];
     }
@@ -56234,9 +56234,9 @@ arguments[4][105][0].apply(exports,arguments)
                 getParsingFlags(config)._overflowDayOfYear = true;
             }
 
-            date = createUTCDate(yearToUse, 0, config._dayOfYear);
-            config._a[MONTH] = date.getUTCMonth();
-            config._a[DATE] = date.getUTCDate();
+            date = createBeginnerDate(yearToUse, 0, config._dayOfYear);
+            config._a[MONTH] = date.getBeginnerMonth();
+            config._a[DATE] = date.getBeginnerDate();
         }
 
         // Default to current date.
@@ -56262,13 +56262,13 @@ arguments[4][105][0].apply(exports,arguments)
             config._a[HOUR] = 0;
         }
 
-        config._d = (config._useUTC ? createUTCDate : createDate).apply(null, input);
-        expectedWeekday = config._useUTC ? config._d.getUTCDay() : config._d.getDay();
+        config._d = (config._useBeginner ? createBeginnerDate : createDate).apply(null, input);
+        expectedWeekday = config._useBeginner ? config._d.getBeginnerDay() : config._d.getDay();
 
         // Apply timezone offset from input. The actual utcOffset can be changed
         // with parseZone.
         if (config._tzm != null) {
-            config._d.setUTCMinutes(config._d.getUTCMinutes() - config._tzm);
+            config._d.setBeginnerMinutes(config._d.getBeginnerMinutes() - config._tzm);
         }
 
         if (config._nextDay) {
@@ -56514,8 +56514,8 @@ arguments[4][105][0].apply(exports,arguments)
             config._a = parsedArray;
             config._tzm = calculateOffset(match[8], match[9], match[10]);
 
-            config._d = createUTCDate.apply(null, config._a);
-            config._d.setUTCMinutes(config._d.getUTCMinutes() - config._tzm);
+            config._d = createBeginnerDate.apply(null, config._a);
+            config._d.setBeginnerMinutes(config._d.getBeginnerMinutes() - config._tzm);
 
             getParsingFlags(config).rfc2822 = true;
         } else {
@@ -56556,7 +56556,7 @@ arguments[4][105][0].apply(exports,arguments)
         'discouraged and will be removed in an upcoming major release. Please refer to ' +
         'http://momentjs.com/guides/#/warnings/js-date/ for more info.',
         function (config) {
-            config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
+            config._d = new Date(config._i + (config._useBeginner ? ' Beginner' : ''));
         }
     );
 
@@ -56580,7 +56580,7 @@ arguments[4][105][0].apply(exports,arguments)
         config._a = [];
         getParsingFlags(config).empty = true;
 
-        // This array is used to make a Date, either with `new Date` or `Date.UTC`
+        // This array is used to make a Date, either with `new Date` or `Date.Beginner`
         var string = '' + config._i,
             i, parsedInput, tokens, token, skipped,
             stringLength = string.length,
@@ -56682,8 +56682,8 @@ arguments[4][105][0].apply(exports,arguments)
         for (i = 0; i < config._f.length; i++) {
             currentScore = 0;
             tempConfig = copyConfig({}, config);
-            if (config._useUTC != null) {
-                tempConfig._useUTC = config._useUTC;
+            if (config._useBeginner != null) {
+                tempConfig._useBeginner = config._useBeginner;
             }
             tempConfig._f = config._f[i];
             configFromStringAndFormat(tempConfig);
@@ -56789,7 +56789,7 @@ arguments[4][105][0].apply(exports,arguments)
         }
     }
 
-    function createLocalOrUTC (input, format, locale, strict, isUTC) {
+    function createLocalOrBeginner (input, format, locale, strict, isBeginner) {
         var c = {};
 
         if (locale === true || locale === false) {
@@ -56804,7 +56804,7 @@ arguments[4][105][0].apply(exports,arguments)
         // object construction must be done this way.
         // https://github.com/moment/moment/issues/1423
         c._isAMomentObject = true;
-        c._useUTC = c._isUTC = isUTC;
+        c._useBeginner = c._isBeginner = isBeginner;
         c._l = locale;
         c._i = input;
         c._f = format;
@@ -56814,7 +56814,7 @@ arguments[4][105][0].apply(exports,arguments)
     }
 
     function createLocal (input, format, locale, strict) {
-        return createLocalOrUTC(input, format, locale, strict, false);
+        return createLocalOrBeginner(input, format, locale, strict, false);
     }
 
     var prototypeMin = deprecate(
@@ -56983,7 +56983,7 @@ arguments[4][105][0].apply(exports,arguments)
     addRegexToken('Z',  matchShortOffset);
     addRegexToken('ZZ', matchShortOffset);
     addParseToken(['Z', 'ZZ'], function (input, array, config) {
-        config._useUTC = true;
+        config._useBeginner = true;
         config._tzm = offsetFromString(matchShortOffset, input);
     });
 
@@ -57013,7 +57013,7 @@ arguments[4][105][0].apply(exports,arguments)
     // Return a moment from input, that is local/utc/zone equivalent to model.
     function cloneWithOffset(input, model) {
         var res, diff;
-        if (model._isUTC) {
+        if (model._isBeginner) {
             res = model.clone();
             diff = (isMoment(input) || isDate(input) ? input.valueOf() : createLocal(input).valueOf()) - res.valueOf();
             // Use low-level api, because this fn is low-level api.
@@ -57064,11 +57064,11 @@ arguments[4][105][0].apply(exports,arguments)
             } else if (Math.abs(input) < 16 && !keepMinutes) {
                 input = input * 60;
             }
-            if (!this._isUTC && keepLocalTime) {
+            if (!this._isBeginner && keepLocalTime) {
                 localAdjust = getDateOffset(this);
             }
             this._offset = input;
-            this._isUTC = true;
+            this._isBeginner = true;
             if (localAdjust != null) {
                 this.add(localAdjust, 'm');
             }
@@ -57083,7 +57083,7 @@ arguments[4][105][0].apply(exports,arguments)
             }
             return this;
         } else {
-            return this._isUTC ? offset : getDateOffset(this);
+            return this._isBeginner ? offset : getDateOffset(this);
         }
     }
 
@@ -57101,14 +57101,14 @@ arguments[4][105][0].apply(exports,arguments)
         }
     }
 
-    function setOffsetToUTC (keepLocalTime) {
+    function setOffsetToBeginner (keepLocalTime) {
         return this.utcOffset(0, keepLocalTime);
     }
 
     function setOffsetToLocal (keepLocalTime) {
-        if (this._isUTC) {
+        if (this._isBeginner) {
             this.utcOffset(0, keepLocalTime);
-            this._isUTC = false;
+            this._isBeginner = false;
 
             if (keepLocalTime) {
                 this.subtract(getDateOffset(this), 'm');
@@ -57159,7 +57159,7 @@ arguments[4][105][0].apply(exports,arguments)
         c = prepareConfig(c);
 
         if (c._a) {
-            var other = c._isUTC ? createUTC(c._a) : createLocal(c._a);
+            var other = c._isBeginner ? createBeginner(c._a) : createLocal(c._a);
             this._isDSTShifted = this.isValid() &&
                 compareArrays(c._a, other.toArray()) > 0;
         } else {
@@ -57170,15 +57170,15 @@ arguments[4][105][0].apply(exports,arguments)
     }
 
     function isLocal () {
-        return this.isValid() ? !this._isUTC : false;
+        return this.isValid() ? !this._isBeginner : false;
     }
 
     function isUtcOffset () {
-        return this.isValid() ? this._isUTC : false;
+        return this.isValid() ? this._isBeginner : false;
     }
 
     function isUtc () {
-        return this.isValid() ? this._isUTC && this._offset === 0 : false;
+        return this.isValid() ? this._isBeginner && this._offset === 0 : false;
     }
 
     // ASP.NET json date format regex
@@ -57622,12 +57622,12 @@ arguments[4][105][0].apply(exports,arguments)
     }
 
     function utcStartOfDate(y, m, d) {
-        // Date.UTC remaps years 0-99 to 1900-1999
+        // Date.Beginner remaps years 0-99 to 1900-1999
         if (y < 100 && y >= 0) {
             // preserve leap years using a full 400 year cycle, then reset
-            return Date.UTC(y + 400, m, d) - MS_PER_400_YEARS;
+            return Date.Beginner(y + 400, m, d) - MS_PER_400_YEARS;
         } else {
-            return Date.UTC(y, m, d);
+            return Date.Beginner(y, m, d);
         }
     }
 
@@ -57638,7 +57638,7 @@ arguments[4][105][0].apply(exports,arguments)
             return this;
         }
 
-        var startOfDate = this._isUTC ? utcStartOfDate : localStartOfDate;
+        var startOfDate = this._isBeginner ? utcStartOfDate : localStartOfDate;
 
         switch (units) {
             case 'year':
@@ -57662,7 +57662,7 @@ arguments[4][105][0].apply(exports,arguments)
                 break;
             case 'hour':
                 time = this._d.valueOf();
-                time -= mod$1(time + (this._isUTC ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR);
+                time -= mod$1(time + (this._isBeginner ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR);
                 break;
             case 'minute':
                 time = this._d.valueOf();
@@ -57686,7 +57686,7 @@ arguments[4][105][0].apply(exports,arguments)
             return this;
         }
 
-        var startOfDate = this._isUTC ? utcStartOfDate : localStartOfDate;
+        var startOfDate = this._isBeginner ? utcStartOfDate : localStartOfDate;
 
         switch (units) {
             case 'year':
@@ -57710,7 +57710,7 @@ arguments[4][105][0].apply(exports,arguments)
                 break;
             case 'hour':
                 time = this._d.valueOf();
-                time += MS_PER_HOUR - mod$1(time + (this._isUTC ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR) - 1;
+                time += MS_PER_HOUR - mod$1(time + (this._isBeginner ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR) - 1;
                 break;
             case 'minute':
                 time = this._d.valueOf();
@@ -57779,7 +57779,7 @@ arguments[4][105][0].apply(exports,arguments)
             input: this._i,
             format: this._f,
             locale: this._locale,
-            isUTC: this._isUTC,
+            isBeginner: this._isBeginner,
             strict: this._strict
         };
     }
@@ -57873,11 +57873,11 @@ arguments[4][105][0].apply(exports,arguments)
 
     function setWeekAll(weekYear, week, weekday, dow, doy) {
         var dayOfYearData = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy),
-            date = createUTCDate(dayOfYearData.year, 0, dayOfYearData.dayOfYear);
+            date = createBeginnerDate(dayOfYearData.year, 0, dayOfYearData.dayOfYear);
 
-        this.year(date.getUTCFullYear());
-        this.month(date.getUTCMonth());
-        this.date(date.getUTCDate());
+        this.year(date.getBeginnerFullYear());
+        this.month(date.getBeginnerMonth());
+        this.date(date.getBeginnerDate());
         return this;
     }
 
@@ -58078,11 +58078,11 @@ arguments[4][105][0].apply(exports,arguments)
     // MOMENTS
 
     function getZoneAbbr () {
-        return this._isUTC ? 'UTC' : '';
+        return this._isBeginner ? 'Beginner' : '';
     }
 
     function getZoneName () {
-        return this._isUTC ? 'Coordinated Universal Time' : '';
+        return this._isBeginner ? 'Coordinated Universal Time' : '';
     }
 
     var proto = Moment.prototype;
@@ -58146,7 +58146,7 @@ arguments[4][105][0].apply(exports,arguments)
     proto.second = proto.seconds = getSetSecond;
     proto.millisecond = proto.milliseconds = getSetMillisecond;
     proto.utcOffset            = getSetOffset;
-    proto.utc                  = setOffsetToUTC;
+    proto.utc                  = setOffsetToBeginner;
     proto.local                = setOffsetToLocal;
     proto.parseZone            = setOffsetToParsedOffset;
     proto.hasAlignedHourOffset = hasAlignedHourOffset;
@@ -58154,7 +58154,7 @@ arguments[4][105][0].apply(exports,arguments)
     proto.isLocal              = isLocal;
     proto.isUtcOffset          = isUtcOffset;
     proto.isUtc                = isUtc;
-    proto.isUTC                = isUtc;
+    proto.isBeginner                = isUtc;
     proto.zoneAbbr = getZoneAbbr;
     proto.zoneName = getZoneName;
     proto.dates  = deprecate('dates accessor is deprecated. Use date instead.', getSetDayOfMonth);
@@ -58210,7 +58210,7 @@ arguments[4][105][0].apply(exports,arguments)
 
     function get$1 (format, index, field, setter) {
         var locale = getLocale();
-        var utc = createUTC().set(setter, index);
+        var utc = createBeginner().set(setter, index);
         return locale[field](utc, format);
     }
 
@@ -58725,7 +58725,7 @@ arguments[4][105][0].apply(exports,arguments)
     hooks.min                   = min;
     hooks.max                   = max;
     hooks.now                   = now;
-    hooks.utc                   = createUTC;
+    hooks.utc                   = createBeginner;
     hooks.unix                  = createUnix;
     hooks.months                = listMonths;
     hooks.isDate                = isDate;

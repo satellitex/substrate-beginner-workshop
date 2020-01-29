@@ -4,12 +4,6 @@
 * [Getting Started](0/)
 	* [Presentation](0/presentation.md)
 
-* [Start a Network Together](1/)
-	* [Use the Network](1/use.md)
-	* [View Public Telemetry](1/telemetry.md)
-	* [Join the Network](1/join.md)
-	* [Interact with Your Node](1/interact.md)
-
 * [Writing a Module](2/)
 	* [Presentation](2/presentation.md)
 	* [Starting Point](2/starting-point.md)
@@ -30,4 +24,10 @@
 	* [Configurable Constants](4/get.md)
 	* [Final Runtime](4/final.md)
 
+* [Start a Network Together](1/)
+	* [Use the Network](1/use.md)
+	* [View Public Telemetry](1/telemetry.md)
+	* [Join the Network](1/join.md)
+	* [Interact with Your Node](1/interact.md)
+	
 * [Notepad](notes.md)

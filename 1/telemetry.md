@@ -2,7 +2,7 @@
 
 You can take a look at the overall network using the telemetry website:
 
-[https://telemetry.polkadot.io/#list/UTCTestnet](https://telemetry.polkadot.io/#list/UTCTestnet)
+[https://telemetry.polkadot.io/#list/BeginnerTestnet](https://telemetry.polkadot.io/#list/BeginnerTestnet)
 
 Your node will connect to the telemetry server because of the `spec.json`:
 

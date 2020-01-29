@@ -3,11 +3,11 @@
 A collaborative workshop to learn how to use Substrate.
 Forked by (https://www.shawntabrizi.com/substrate-beginner-workshop/).
 
-Today's slide: https://drive.google.com/file/d/1FuVS8ne3jktulLSm42PBhoCbKSDRDxSz/view?usp=sharing
+Today's slide: https://drive.google.com/file/d/1TXd17BjCNwfShgbZVijgm36nMtAouBgr/view?usp=sharing
 
 ## Documents and references
 
-Ref(SubstrateDocuments): https://substrate.dev/
+Substrate official developer documents: https://substrate.dev/
 
 Substrate(Crates): https://crates.parity.io/
 

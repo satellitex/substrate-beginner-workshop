@@ -1,6 +1,6 @@
 {
-  "name": "UTCNetwork",
-  "id": "utc_testnet",
+  "name": "BeginnerNetwork",
+  "id": "beginner_testnet",
   "bootNodes": [
     "/ip4/13.231.170.86/tcp/30333/p2p/QmXTDUUbunrTVZEoRXYX1Ci9Hn8u1gyoZUyCMDhugBRZNN",
     "/ip4/3.113.15.56/tcp/30333/p2p/QmPyd2Tjo7XqpgGT3PXSXSqRidWfwjZLoEZvxfo6ytgQFp"
@@ -11,10 +11,10 @@
       0
     ]
   ],
-  "protocolId": "utc",
+  "protocolId": "bgn",
   "properties": {
     "tokenDecimals": 15,
-    "tokenSymbol": "UTC"
+    "tokenSymbol": "BGN"
   },
   "consensusEngine": null,
   "genesis": {
