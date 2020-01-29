@@ -2,8 +2,8 @@
   "name": "BeginnerNetwork",
   "id": "beginner_testnet",
   "bootNodes": [
-    "/ip4/13.231.170.86/tcp/30333/p2p/QmXTDUUbunrTVZEoRXYX1Ci9Hn8u1gyoZUyCMDhugBRZNN",
-    "/ip4/3.113.15.56/tcp/30333/p2p/QmPyd2Tjo7XqpgGT3PXSXSqRidWfwjZLoEZvxfo6ytgQFp"
+    "/ip4/52.199.223.200/tcp/30333/p2p/QmYs3Kze424YbFH8RfdB1boGu3fzbiXP6b5WdVUKATETYt",
+    "/ip4/3.112.132.135/tcp/30333/p2p/QmZFooqMzpxzk1uwuMPmgHwyBTez8NUsUq8VLPTroUpYVy"
   ],
   "telemetryEndpoints": [
     [

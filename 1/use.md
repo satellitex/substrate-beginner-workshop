@@ -8,9 +8,9 @@ I think of this UI as a multimeter for Substrate-based blockchains.
 
 You can try out the Apps UI at:
 
-* [https://polkadot.js.org/apps/#/explorer?rpc=ws://13.231.170.86:9944](https://polkadot.js.org/apps/#/explorer?rpc=ws://13.231.170.86:9944)
+* [https://polkadot.js.org/apps/#/explorer?rpc=ws://52.199.223.200:9944](https://polkadot.js.org/apps/#/explorer?rpc=ws://52.199.223.200:9944)
 
-You can see we have explicitly set the UI to use a WebSocket endpoint exposed at `ws://13.231.170.86:9944`. This can be changed on the Settings tab as we'll see shortly.
+You can see we have explicitly set the UI to use a WebSocket endpoint exposed at `ws://52.199.223.200:9944`. This can be changed on the Settings tab as we'll see shortly.
 
 ## Frontend Template
 
